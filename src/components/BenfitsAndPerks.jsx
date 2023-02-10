@@ -1,5 +1,6 @@
 import React from "react";
 import groupIcon from "../assets/group.svg";
+import { motion, useScroll } from "framer-motion";
 
 let cardData = [
   {
@@ -30,11 +31,20 @@ const BenfitsAndPerks = () => {
         </p>
       </div>
       <div className=" h-full w-[75%] pl-[40px] py-[35px] grid grid-cols-3 gap-[20px]">
-        {cardData?.map((item) => {
+        {cardData?.map((item, ind) => {
           return (
-            <div className="w-full h-full bg-[#FFFFFF]">
-              <img src={item?.icon} alt="group" />
-            </div>
+            <motion.div
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 2, x: 0 }}
+              //   animate={{ x: 100 }}
+              key={ind}
+              transition={{ ease: "easeOut", duration: 1 }}
+              className="w-full h-full bg-[#FFFFFF] px-[24px] py-[24px]"
+            >
+              <img src={groupIcon} alt="group" />
+              <p className="text-[20px] font-[500] mt-[26px]"> {item.title}</p>
+              <p className="text-[16px] font-[300]">{item.subTitle}</p>
+            </motion.div>
           );
         })}
       </div>
