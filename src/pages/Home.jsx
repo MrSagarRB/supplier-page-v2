@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import waves from "../assets/wave.svg";
 import Header from "../components/Header";
 import girlImage from "../assets/Girl.png";
@@ -24,6 +24,7 @@ import message from "../assets/footer-icon/message.svg";
 import tweeter from "../assets/social/tweeter.svg";
 import facebook from "../assets/social/facebook.svg";
 import linkdin from "../assets/social/linkdin.png";
+import { ContextProvider } from "../Context";
 
 let timelLine = [
   {
@@ -66,24 +67,32 @@ let preReqData = [
 ];
 
 const Home = () => {
+  let { isOpen, setOpen } = useContext(ContextProvider);
   return (
     <div className="relative overflow-hidden">
+      <div
+        className={`bg-black ${
+          isOpen ? "" : "hidden"
+        }  h-full w-full absolute z-10 duration-500 opacity-20`}
+      >
+        {" "}
+      </div>
       <div className=" absolute top-0 overflow-hidden z-0 opacity-30">
         <img src={groupWaves} className="h-full w-full " />
       </div>
       <div className="linear-gradient-1 h-full ">
         <Header />
-        <section id="sec-1" className=" relative   overflow-hidden ">
+        <section id="sec-1" className=" relative h-screen   overflow-hidden ">
           <img
             src={waves}
             alt="waves"
             className=" xl:w-full absolute  bottom-0"
           />
-          <div className=" flex flex-col sm:flex-row items-center justify-between mt-[100px]   ">
+          <div className=" sm:flex justify-between lg:pt-[100px] pt-[50px]  ">
             <motion.div
               animate={{ x: 100 }}
               transition={{ ease: "easeOut", duration: 1 }}
-              className=" w-[500px]"
+              className=" w-[500px] "
             >
               <p className="text-[58px] font-[600] text-[#fff] leading-[80px]">
                 The Future of <br /> Research is here
@@ -98,7 +107,7 @@ const Home = () => {
             <motion.div
               animate={{ x: -100 }}
               transition={{ ease: "easeOut", duration: 1 }}
-              className="h-[400px]  w-[400px]   2xl:h-[700px] 2xl:w-[600px]"
+              className="h-[400px]   w-[400px]   2xl:h-[700px] 2xl:w-[600px]"
             >
               <img src={girlImage} className="h-full w-full object-cover " />
             </motion.div>{" "}
@@ -106,9 +115,9 @@ const Home = () => {
         </section>
         <section
           id="sec-2"
-          className="  px-[100px] bg-white 2xl:pt-[200px] flex flex-col items-center "
+          className="px-[100px] bg-white 2xl:pt-[200px] flex flex-col items-center  "
         >
-          <div className=" flex w-full  mb-[100px] 2xl:mb-[200px]  2xl:w-[70%] ">
+          <div className="lg:flex w-full  mb-[100px] 2xl:mb-[200px]  2xl:w-[70%] ">
             <div className="w-[40%] ">
               <motion.div
                 initial={{ opacity: 0, scale: 0 }}
@@ -123,7 +132,7 @@ const Home = () => {
                 />
               </motion.div>
             </div>
-            <div className="flex flex-col  w-[60%] px-[50px] pt-[30px] ">
+            <div className="flex lg:flex-col   lg:w-[60%] px-[50px] pt-[30px] ">
               <motion.div
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -144,7 +153,7 @@ const Home = () => {
                 initial={{ y: 100 }}
                 whileInView={{ y: 0 }}
                 translate={{ duration: 1 }}
-                className="mt-[50px]"
+                className="lg:mt-[50px]"
               >
                 <p className="text-[25px] font-[600]">Our Vision</p>
                 <p className="text-[16px] font-[400] leading-[20px] tracking-[0.02em] mt-[10px]">
@@ -160,7 +169,7 @@ const Home = () => {
         </section>
         <section
           id="sec-3"
-          className=" px-[100px] bg-white   flex flex-col justify-center items-center"
+          className="h-screen px-[100px] bg-white   flex flex-col justify-center items-center"
         >
           <div className=" w-full">
             <p className="text-[25px] font-[600]">Supplier Portal Features</p>
@@ -215,7 +224,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="h-[500px] w-full mt-[40px] 2xl:mt-[200px] flex justify-center items-center 2xl:w-[70%] ">
+          <div className="h-[500px]  w-full mt-[40px] 2xl:mt-[200px] flex justify-center items-center 2xl:w-[70%] ">
             <Explore />
           </div>
         </section>

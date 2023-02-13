@@ -66,7 +66,7 @@ const Explore = () => {
   });
 
   return (
-    <div className="h-full w-[80%] relative  ">
+    <div className="h-full lg:w-[80%] relative  ">
       <div className="linear-gradient-4 h-[80%] p-[30px] flex relative">
         <img
           src={lines}
@@ -79,8 +79,8 @@ const Explore = () => {
             src={ExploreData[index].img}
           />
         </div>
-        <div className=" w-[50%] relative h-full">
-          <div className=" pl-[50px] mt-[80px] text-[#fff]">
+        <div className=" w-[50%] relative  flex flex-col h-full">
+          <div className=" pl-[50px] mt-[80px] text-[#fff] ">
             <p className="text-[25px] font-[600]">{ExploreData[index].title}</p>
             <p className="text-[16px] font-[400] mt-[30px]">
               You'll get a list of surveys inventory, launch them accordingly
@@ -88,7 +88,7 @@ const Explore = () => {
               get access to pricing data,
             </p>
           </div>
-          <div className=" absolute bottom-0 left-[50px]  flex gap-[20px]">
+          <div className=" flex gap-[22px]  pl-[50px] mt-auto ">
             <div
               onClick={() => {
                 prevBtn();
@@ -108,20 +108,22 @@ const Explore = () => {
           </div>
         </div>
       </div>
-      <div className=" w-[50%] absolute bottom-0 left-[400px] flex gap-[20px] ">
-        {ExploreData.map((item, ind) => {
-          return (
-            <div
-              onClick={() => {
-                setIndex(ind);
-              }}
-              key={ind}
-              className={`${
-                index == item.id ? "bg-[#165ECB]" : "bg-[#1765DC33]"
-              }  w-[31px] h-[8px]   rounded-[10px]`}
-            ></div>
-          );
-        })}
+      <div className=" flex items-center justify-center mt-[63px] ">
+        <div className="flex gap-[21px]">
+          {ExploreData.map((item, ind) => {
+            return (
+              <div
+                onClick={() => {
+                  setIndex(ind);
+                }}
+                key={ind}
+                className={`${
+                  index == item.id ? "bg-[#165ECB]" : "bg-[#1765DC33]"
+                }  w-[31px] h-[8px]   rounded-[10px]`}
+              ></div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

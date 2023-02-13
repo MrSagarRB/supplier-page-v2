@@ -4,6 +4,7 @@ export const ContextProvider = createContext();
 
 const Context = ({ children }) => {
   let [user, setUser] = useState("Sagar");
+  const [isOpen, setOpen] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const handleScroll = () => {
     const position = window.pageYOffset;
@@ -19,7 +20,7 @@ const Context = ({ children }) => {
   }, []);
 
   return (
-    <ContextProvider.Provider value={{ user, scrollPosition }}>
+    <ContextProvider.Provider value={{ user, scrollPosition, isOpen, setOpen }}>
       {children}
     </ContextProvider.Provider>
   );
