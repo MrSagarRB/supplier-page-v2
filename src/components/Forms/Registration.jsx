@@ -110,7 +110,6 @@ const Registration = () => {
                     className="w-[18px] cursor-pointer"
                   />
                   <label htmlFor={ind} className="cursor-pointer">
-                    {" "}
                     {radio.title}
                   </label>
                 </div>

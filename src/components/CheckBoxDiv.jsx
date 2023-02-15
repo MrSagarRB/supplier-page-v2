@@ -3,7 +3,7 @@ import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
 const CheckBoxDiv = ({ props }) => {
   let [check, setCheck] = useState(false);
-  console.log(props);
+
   return (
     <div className="">
       <label>

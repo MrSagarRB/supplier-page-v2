@@ -1,6 +1,7 @@
 import React from "react";
 import CheckBoxDiv from "../CheckBoxDiv";
 import UploadFile from "../UploadFile";
+import { motion } from "framer-motion";
 
 let PanelBaseData = [
   {
@@ -31,7 +32,12 @@ let PanelBaseData2 = [
 
 const PanelBase = () => {
   return (
-    <div>
+    <motion.div
+      className=" "
+      initial={{ x: 500 }}
+      animate={{ x: 0 }}
+      transition={{ ease: "easeOut", duration: 0.3 }}
+    >
       <p className="text-[#333333] font-[500] text-[24px]">
         Your company panel base
       </p>
@@ -98,7 +104,7 @@ const PanelBase = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

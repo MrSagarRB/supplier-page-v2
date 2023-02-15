@@ -4,7 +4,6 @@ import { ContextProvider } from "../Context";
 const NavigationBar = () => {
   let { formIndex, setFormIndex, activeSteps } = useContext(ContextProvider);
 
-  console.log(activeSteps[0] === undefined);
   return (
     <div
       className={`${

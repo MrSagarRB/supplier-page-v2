@@ -21,7 +21,6 @@ const Context = ({ children }) => {
     };
   }, []);
 
-  console.log(activeSteps);
   return (
     <ContextProvider.Provider
       value={{

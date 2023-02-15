@@ -156,7 +156,8 @@ table tr td {
   border: none !important;
 }
 
-.check-btn {
+.check-btn,
+.input-file {
   display: none;
 }
 
