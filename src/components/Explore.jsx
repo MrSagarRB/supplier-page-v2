@@ -52,7 +52,7 @@ const Explore = () => {
   let [index, setIndex] = useState(0);
 
   let nextBtn = () => {
-    ExploreData.length - 1 > index ? setIndex(index + 1) : setIndex(0);
+    ExploreData.length - 1 > index ? setIndex((prev) => prev + 1) : setIndex(0);
   };
 
   let prevBtn = () => {
@@ -60,10 +60,13 @@ const Explore = () => {
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      nextBtn();
-    }, 5000);
-  });
+    console.log("useEffect called");
+    index < ExploreData.length - 1
+      ? setTimeout(() => {
+          setIndex((prev) => prev + 1);
+        }, 3000)
+      : setIndex(0);
+  }, [index]);
 
   return (
     <div className="h-full lg:w-[80%] relative  ">

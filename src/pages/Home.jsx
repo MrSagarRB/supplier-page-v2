@@ -25,6 +25,7 @@ import tweeter from "../assets/social/tweeter.svg";
 import facebook from "../assets/social/facebook.svg";
 import linkdin from "../assets/social/linkdin.png";
 import { ContextProvider } from "../Context";
+import { Link } from "react-router-dom";
 
 let timelLine = [
   {
@@ -100,9 +101,11 @@ const Home = () => {
               <p className="text-[#fff] text-[20px] font-[500] mt-[16px]">
                 Try mirats supe for free
               </p>
-              <button className="px-[16px] py-[8px] hover:bg-[#000] hover:text-[#fff] duration-500 bg-[#fff] mt-[31px] text-[16px] font-[600]">
-                Become a supplier
-              </button>
+              <Link to="onboarding-form">
+                <button className="px-[16px] py-[8px] hover:bg-[#000] hover:text-[#fff] duration-500 bg-[#fff] mt-[31px] text-[16px] font-[600]">
+                  Become a supplier
+                </button>
+              </Link>
             </motion.div>
             <motion.div
               animate={{ x: -100 }}
