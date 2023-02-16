@@ -9,6 +9,7 @@ import Extras from "../components/Forms/Extras";
 import MarketAndIndustries from "../components/Forms/MarketAndIndustries";
 import PanelBase from "../components/Forms/PanelBase";
 import Confirmation from "../components/Forms/Confirmation";
+import SuccessfullRegister from "../components/Forms/SuccessfullRegister";
 
 const OnboardingForm = () => {
   const forms = [
@@ -19,6 +20,7 @@ const OnboardingForm = () => {
     <MarketAndIndustries />,
     <PanelBase />,
     <Confirmation />,
+    <SuccessfullRegister />,
   ];
 
   let { formIndex } = useContext(ContextProvider);

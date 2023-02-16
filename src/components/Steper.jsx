@@ -39,7 +39,9 @@ const Steper = () => {
   return (
     <div
       className={` ${
-        activeSteps[0] === undefined ? "hidden" : "flex"
+        activeSteps[0] === undefined || activeSteps.length >= 7
+          ? "hidden"
+          : "flex"
       } mb-[50px] flex items-center  justify-center`}
     >
       <div className="flex items-center justify-center lg:flex-row flex-col gap-[10px] text-[14px] w-full">

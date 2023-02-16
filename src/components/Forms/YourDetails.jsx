@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { ContextProvider } from "../../Context";
 import { motion } from "framer-motion";
+import countryCodes from "../../jsons/countyCode.json";
+
 const radioOptions = [
   {
     title: "Alliance Manager",
@@ -30,6 +32,7 @@ const radioOptions = [
 
 const YourDetails = () => {
   let { setFormIndex, formIndex, activeSteps } = useContext(ContextProvider);
+
   return (
     <motion.div
       initial={{ x: 500 }}
@@ -81,7 +84,10 @@ const YourDetails = () => {
               <p className="text-[12px] mb-[10px]">Your Contact</p>
               <div className="w-full h-[40px] border border-[#DFDFDF] rounded-[6px] overflow-hidden flex">
                 <select className="h-full border-r pl-[16px] outline-none text-[#C0C0C0]">
-                  <option>+91</option>
+                  <option>+91</option>;
+                  {countryCodes.map((item) => {
+                    return <option>{item.dial_code}</option>;
+                  })}
                 </select>
                 <input type="text" className="h-full w-full numberInput" />
               </div>
@@ -93,7 +99,9 @@ const YourDetails = () => {
                 </p>
                 <select className="w-full h-full border border-[#DFDFDF] rounded-[6px] py-[11px] px-[16px] outline-none text-[#C0C0C0]">
                   <option>Select</option>
-                  <option>India</option>
+                  {countryCodes.map((item) => {
+                    return <option>{item.name}</option>;
+                  })}
                 </select>
               </td>
             </tr>

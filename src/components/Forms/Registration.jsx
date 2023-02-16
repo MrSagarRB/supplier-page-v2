@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import countryCodes from "../../jsons/countyCode.json";
 
 const Registration = () => {
   const radioOptions = [
@@ -73,6 +74,9 @@ const Registration = () => {
               <p className="text-[12px] mb-[10px]">Offices in country</p>
               <select className="w-full h-full border border-[#DFDFDF] rounded-[6px] py-[11px] px-[16px] outline-none text-[#C0C0C0]">
                 <option> Select</option>
+                {countryCodes.map((item) => {
+                  return <option>{item.name}</option>;
+                })}
               </select>
               <p className="text-[#C0C0C0] italic text-[12px]">
                 select number of countries your offices are

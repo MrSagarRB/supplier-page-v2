@@ -7,7 +7,9 @@ const NavigationBar = () => {
   return (
     <div
       className={`${
-        activeSteps[0] === undefined ? "hidden" : "flex"
+        activeSteps[0] === undefined || activeSteps.length >= 6
+          ? "hidden"
+          : "flex"
       }   justify-center pt-[100px]`}
     >
       <div className="w-[900px] flex justify-between ">

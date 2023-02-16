@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
+import contryCity from "../../jsons/countryCitys.json";
 
 const CompanyDetails = () => {
+  let countries = Object.keys(contryCity);
+  let [city, setCity] = useState();
+
+  let handelSelectCountry = (e) => {
+    let selectededCountry = e.target.value;
+    setCity(contryCity[selectededCountry]);
+  };
   return (
     <motion.div
       className=" "
@@ -58,9 +66,18 @@ const CompanyDetails = () => {
           <tr>
             <td>
               <p className="text-[12px] mb-[10px]">Country</p>
-              <select className="w-full h-full border border-[#DFDFDF] rounded-[6px] py-[11px] px-[16px] outline-none text-[#C0C0C0]">
+              <select
+                onChange={(e) => handelSelectCountry(e)}
+                className="w-full h-full border border-[#DFDFDF] rounded-[6px] py-[11px] px-[16px] outline-none text-[#C0C0C0]"
+              >
                 <option> Select</option>
-                <option>India</option>
+                {countries.map((item, ind) => {
+                  return (
+                    <option value={item} key={ind}>
+                      {item}
+                    </option>
+                  );
+                })}
               </select>
             </td>
           </tr>
@@ -71,7 +88,10 @@ const CompanyDetails = () => {
                   <p className="text-[12px] mb-[10px]">City</p>
                   <select className="w-full  border border-[#DFDFDF] rounded-[6px] py-[11px] px-[16px] outline-none text-[#C0C0C0]">
                     <option> Select</option>
-                    <option>Mumbai</option>
+
+                    {city?.map((item) => {
+                      return <option> {item}</option>;
+                    })}
                   </select>
                 </div>
                 <div className="w-[50%]">

@@ -134,6 +134,7 @@ table {
 table input[type="text"],
 input[type="date"],
 input[type="number"],
+input[type="password"],
 textarea {
   outline: none;
   width: 100%;
@@ -164,4 +165,26 @@ table tr td {
 .check-btn:checked + .container {
   background-color: #1765dc;
   color: #fff;
+}
+
+/* Loader */
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.loader::after {
+  content: "";
+  width: 150px;
+  height: 150px;
+  animation: loading 1s infinite linear;
+  border: 20px solid rgb(241, 238, 238);
+  border-top-color: #1765dc;
+  border-radius: 50%;
+}
+@keyframes loading {
+  to {
+    transform: rotate(2turn);
+  }
 }
