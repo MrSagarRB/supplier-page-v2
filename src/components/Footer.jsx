@@ -24,14 +24,14 @@ let cardData = [
 
 const Footer = () => {
   return (
-    <div className=" h-[394px] bg-[#E0E0E0] rounded-tr-[24px] rounded-tl-[24px] px-[100px] pt-[47px]">
+    <div className=" h-[394px] bg-[#E0E0E0] rounded-tr-[24px] rounded-tl-[24px] px-[100px] pt-[47px] ">
       <img src={miLogoBlack} alt="" />
       <div className=" w-full  mt-[40px] h-[200px]  flex gap-[20px] border-b border-[#AEAEAE] px-[20px]">
         {/* Card */}
 
         {cardData.map((item) => {
           return (
-            <div className="h-full w-[400px] flex">
+            <div className="h-full w-[400px] flex ">
               <div className="  h-full">
                 <div className="h-[50px] w-[50px] bg-[#fff] rounded-full flex items-center justify-center text-[24px] text-[#333333]">
                   {item.icon}
@@ -53,7 +53,9 @@ const Footer = () => {
         {/*  */}
       </div>
       <div className=" w-full flex justify-between pt-[30px] px-[20px]">
-        <p>Copyright (c) 2023 Mirats Insights, LLC. All rights reserved.</p>
+        <p className="">
+          Copyright (c) 2023 Mirats Insights, LLC. All rights reserved.
+        </p>
         <p> Privacy Policy | Terms of Use | Privacy Policy | Legal | Sitemap</p>
         <p>भारत</p>
       </div>

@@ -3,9 +3,7 @@ import { AiOutlineFilePdf } from "react-icons/ai";
 import { BsUpload } from "react-icons/bs";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 
-const UploadFile = () => {
-  let [selectFile, setSelectFile] = useState([]);
-
+const UploadFile = ({ selectFile, setSelectFile }) => {
   let handelUploadFile = (e) => {
     Object?.entries(e.target.files)?.map(([key, value]) =>
       setSelectFile((prev) => [...prev, { key: value }])

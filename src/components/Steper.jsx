@@ -44,7 +44,7 @@ const Steper = () => {
           : "flex"
       } mb-[50px] flex items-center  justify-center`}
     >
-      <div className="flex items-center justify-center lg:flex-row flex-col gap-[10px] text-[14px] w-full">
+      <div className="grid grid-cols-4 lg:flex lg:items-center justify-center lg:flex-row flex-col gap-[10px] text-[14px] w-full">
         {steps.map((item) => {
           return (
             <div className="flex items-center gap-[5px] stepper">

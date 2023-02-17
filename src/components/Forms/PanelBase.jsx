@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import CheckBoxDiv from "../CheckBoxDiv";
 import UploadFile from "../UploadFile";
 import { motion } from "framer-motion";
@@ -31,6 +31,9 @@ let PanelBaseData2 = [
 ];
 
 const PanelBase = () => {
+  let [selectFile1, setSelectFile1] = useState([]);
+  let [selectFile2, setSelectFile2] = useState([]);
+  console.log(selectFile1);
   return (
     <motion.div
       className=" "
@@ -100,7 +103,32 @@ const PanelBase = () => {
             or <hr className="w-[30%] border-[#A8A8A8]" />
           </div>
           <div className="mt-[25px]">
-            <UploadFile />
+            <UploadFile
+              selectFile={selectFile1}
+              setSelectFile={setSelectFile1}
+            />
+          </div>
+          <p className="text-[#1765DC] text-[24px] font-[400] mt-[10px] ">
+            Provide your ESOMAR URL or Upload Document
+          </p>
+          <table>
+            <tr>
+              <td>
+                <p className="text-[12px] mb-[10px]">ESOMAR URL</p>
+                <input type="text" placeholder="Paste your URL here" />
+              </td>
+            </tr>
+          </table>
+          <div className="flex items-center justify-center gap-[10px] mt-[25px] text-[16px]">
+            {" "}
+            <hr className="w-[30%] border-[#A8A8A8]" />
+            or <hr className="w-[30%] border-[#A8A8A8]" />
+          </div>
+          <div className="mt-[25px]">
+            <UploadFile
+              selectFile={selectFile2}
+              setSelectFile={setSelectFile2}
+            />
           </div>
         </div>
       </div>

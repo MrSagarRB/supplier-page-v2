@@ -277,11 +277,11 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <section className="h-[550px] 2xl:h-[700px] ">
+        <section className="h-[600px] 2xl:h-[700px]  ">
           <div className="w-full ">
             <img src={footerWave} alt="waves" className="h-full w-full " />
           </div>
-          <div className=" text-[#FFFFFF] px-[100px] flex justify-between w-full">
+          <div className=" text-[#FFFFFF] px-[100px] lg:flex grid grid-cols-2 gap-[50px] lg:gap-0 justify-between w-full">
             <div className=" ">
               <p className="text-[25px] font-[600]">Customer Service</p>
               <p className="mt-[20px]">
