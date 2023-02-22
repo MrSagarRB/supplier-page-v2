@@ -1,6 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
-import confetti from "https://cdn.skypack.dev/canvas-confetti";
 import { ContextProvider } from "../../Context";
+// import confetti from "https://cdn.skypack.dev/canvas-confetti";
+{
+  /* <script src="https://kit.fontawesome.com/a076d05399.js"></script> */
+}
 
 const SuccessfullRegister = () => {
   let [loading, setLoading] = useState(true);
@@ -8,7 +11,7 @@ const SuccessfullRegister = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      confetti();
+      // confetti();
       setLoading(false);
     }, 3000);
   }, []);
