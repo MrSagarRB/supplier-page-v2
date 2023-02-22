@@ -29,7 +29,7 @@ const OnboardingForm = () => {
     <div className=" h-screen py-[64px] px-[20px]">
       <Steper />
       <div className=" flex items-center justify-center">
-        <div className="w-[900px]  min-h-[600px]"> {forms[formIndex]}</div>
+        <div className="w-[900px]  min-h-[600px] "> {forms[formIndex]}</div>
       </div>
       <NavigationBar />
     </div>

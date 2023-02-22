@@ -10,7 +10,7 @@ const NavigationBar = () => {
         activeSteps[0] === undefined || activeSteps.length >= 6
           ? "hidden"
           : "flex"
-      }   justify-center pt-[100px]`}
+      }   justify-center pt-[100px] pb-[100px]`}
     >
       <div className="w-[900px] flex justify-between ">
         <button
