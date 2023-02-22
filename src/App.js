@@ -7,7 +7,7 @@ import OnboardingForm from "./pages/OnboardingForm";
 
 const App = () => {
   return (
-    <div>
+    <div className="2xl-[1440px]">
       <Context>
         <Router>
           <Routes>
